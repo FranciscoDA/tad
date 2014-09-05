@@ -12,6 +12,7 @@ bool ElementoMayor(const Elemento* a, const Elemento* b, TIPO_COMPARAR t)
 	else if (t == TC_STRING)
 		return strcmp((*a).DS, (*b).DS) > 0;
 }
+
 bool ElementoMenor(const Elemento* a, const Elemento* b, TIPO_COMPARAR t)
 {
 	if (t == TC_ENTERO)
@@ -21,6 +22,7 @@ bool ElementoMenor(const Elemento* a, const Elemento* b, TIPO_COMPARAR t)
 	else if (t == TC_STRING)
 		return strcmp((*a).DS, (*b).DS) < 0;
 }
+
 bool ElementoIgual(const Elemento* a, const Elemento* b, TIPO_COMPARAR t)
 {
 	if (t == TC_ENTERO)
@@ -29,4 +31,23 @@ bool ElementoIgual(const Elemento* a, const Elemento* b, TIPO_COMPARAR t)
 		return false;
 	else if (t == TC_STRING)
 		return strcmp((*a).DS, (*b).DS) == 0;
+}
+
+void armarString(const Elemento* a, *char[] s)
+{
+	int len = 0;
+	//char[sizeof(a.DI)] di = a.DI;
+	char[sizeof(a.DS)] ds = a.DS;
+	//char[sizeof(a.DR)] dr = a.DR;
+	//char[sizeof(a.DP)] dp = a.DP;
+	
+	len = strlen(di) + strlen(ds) + strlen(dr) + strlen(dp);
+	*s[len] = "";
+	
+	*s = strcat(di," ");
+	*s = strcat(*s,ds);
+	*s = strcat(*s," ");
+	*s = strcat(*s,dr);
+	*s = strcat(*s," ");
+	*s = strcat(*s,dp);
 }
