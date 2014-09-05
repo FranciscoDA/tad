@@ -10,9 +10,9 @@ typedef enum {
 } TIPO_COMPARAR;
 
 typedef struct {
-	DI : int;
-	DR : double;
-	DS : char [50];
+	int DI;
+	double DR;
+	char DS[50];
 } Elemento;
 
 bool ElementoMayor(const Elemento* a, const Elemento* b, TIPO_COMPARAR t);
