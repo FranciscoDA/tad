@@ -36,7 +36,8 @@ bool ElementoIgual(const Elemento* a, const Elemento* b, TIPO_COMPARAR t)
 void armarString(const Elemento* a, *char[] s)
 {
 	int len = 0;
-	//char[sizeof(a.DI)] di = a.DI;
+	char[sizeof(a.DI)] di;
+	itoa(a.DI, di, 10);
 	char[sizeof(a.DS)] ds = a.DS;
 	//char[sizeof(a.DR)] dr = a.DR;
 	//char[sizeof(a.DP)] dp = a.DP;
