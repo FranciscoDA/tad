@@ -38,10 +38,12 @@ bool ListaIntercambiar(Lista* l, const ListaPosicion p, const ListaPosicion q);
 
 void ListaInsertionSort(
 	Lista* l,
-	bool (*cmp)(const Elemento* a, const Elemento* b)
+	bool (*cmp)(const Elemento*, const Elemento*, TIPO_COMPARAR),
+	TIPO_COMPARAR t
 );
 void ListaSelectionSort(
 	Lista* l,
-	bool (*cmp)(const Elemento* a, const Elemento* b)
+	bool (*cmp)(const Elemento*, const Elemento*, TIPO_COMPARAR),
+	TIPO_COMPARAR t
 );
 

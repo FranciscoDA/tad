@@ -10,7 +10,7 @@ bool ElementoMayor(const Elemento* a, const Elemento* b, TIPO_COMPARAR t)
 	else if (t == TC_REAL)
 		return (*a).DR > (*b).DR;
 	else if (t == TC_STRING)
-		return strcmp((*a).DS, (*b).DS)) > 0;
+		return strcmp((*a).DS, (*b).DS) > 0;
 }
 bool ElementoMenor(const Elemento* a, const Elemento* b, TIPO_COMPARAR t)
 {
@@ -19,7 +19,7 @@ bool ElementoMenor(const Elemento* a, const Elemento* b, TIPO_COMPARAR t)
 	else if (t == TC_REAL)
 		return (*a).DR < (*b).DR;
 	else if (t == TC_STRING)
-		return strcmp((*a).DS, (*b).DS)) < 0;
+		return strcmp((*a).DS, (*b).DS) < 0;
 }
 bool ElementoIgual(const Elemento* a, const Elemento* b, TIPO_COMPARAR t)
 {
@@ -28,5 +28,5 @@ bool ElementoIgual(const Elemento* a, const Elemento* b, TIPO_COMPARAR t)
 	else if (t == TC_REAL)
 		return false;
 	else if (t == TC_STRING)
-		return strcmp((*a).DS, (*b).DS)) == 0;
+		return strcmp((*a).DS, (*b).DS) == 0;
 }

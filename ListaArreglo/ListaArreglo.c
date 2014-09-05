@@ -1,6 +1,5 @@
 
 #include <stdlib.h>
-#include <stdio.h>
 #include "ListaArreglo.h"
 
 void ListaCrear(Lista* l)
@@ -145,7 +144,8 @@ bool ListaIntercambiar(Lista* l, const ListaPosicion p, const ListaPosicion q)
 
 void ListaInsertionSort(
 	Lista* l,
-	bool (*cmp)(const Elemento* a, const Elemento* b)
+	bool (*cmp)(const Elemento*, const Elemento*, TIPO_COMPARAR),
+	TIPO_COMPARAR t
 )
 {
 	if (ListaVacia(l))
@@ -158,7 +158,7 @@ void ListaInsertionSort(
 		ListaRecuperar(l, &e, p);
 		ListaPosicion p2 = ListaAnterior(l, p);
 		Elemento x;
-		while (ListaRecuperar(l, &x, p2) && cmp(&e, &x))
+		while (ListaRecuperar(l, &x, p2) && cmp(&e, &x, t))
 		{
 			ListaActualizar(l, &x, ListaSiguiente(l, p2));
 			p2 = ListaAnterior(l, p2);
@@ -171,7 +171,8 @@ void ListaInsertionSort(
 
 void ListaSelectionSort(
 	Lista* l,
-	bool (*cmp)(const Elemento* a, const Elemento* b)
+	bool (*cmp)(const Elemento*, const Elemento*, TIPO_COMPARAR),
+	TIPO_COMPARAR t
 )
 {
 	if (ListaVacia(l))
@@ -189,12 +190,12 @@ void ListaSelectionSort(
 
 		while (ListaRecuperar(l, &et, pt))
 		{
-			if (cmp(et, em))
+			if (cmp(&et, &em, t))
 			{
 				em = et;
 				pm = pt;
 			}
-			pt = ListaSiguiente(l, et);
+			pt = ListaSiguiente(l, pt);
 		}
 		ListaIntercambiar(l, p, pm);
 		p = ListaSiguiente(l, p);
