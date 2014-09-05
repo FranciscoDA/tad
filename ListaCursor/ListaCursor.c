@@ -1,6 +1,6 @@
 
 #include <stdlib.h>
-#include "ListaArreglo.h"
+#include "ListaCursor.h"
 
 void ListaCrear(Lista* l)
 {
@@ -17,4 +17,9 @@ bool ListaVacia(const Lista* l)
 bool ListaLlena(const Lista* l)
 {
 	return (*l).qItems == LISTA_MAX;
+}
+
+ListaPosicion ListaAnterior (const Lista* l, const ListaPosicion p)
+{
+	return (*l).elementos[p].siguiente;
 }
