@@ -13,9 +13,11 @@ typedef struct {
 	int DI;
 	double DR;
 	char DS[50];
+	void* DP;
+	void* DV;
 } Elemento;
 
 bool ElementoMayor(const Elemento* a, const Elemento* b, TIPO_COMPARAR t);
 bool ElementoMenor(const Elemento* a, const Elemento* b, TIPO_COMPARAR t);
 bool ElementoIgual(const Elemento* a, const Elemento* b, TIPO_COMPARAR t);
-
+void ArmarString(const Elemento* a, char* s);
