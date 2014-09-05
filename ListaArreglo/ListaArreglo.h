@@ -23,7 +23,8 @@ bool ListaRecuperar(const Lista* l, Elemento* dest, const ListaPosicion p);
 ListaPosicion ListaBuscar(
 	const Lista* l,
 	const Elemento* e,
-	bool (*cmp)(const Elemento* a, const Elemento* b)
+	bool (*cmp)(const Elemento*, const Elemento*, TIPO_COMPARAR),
+	TIPO_COMPARAR t
 );
 
 ListaPosicion ListaAnterior(const Lista* l, const ListaPosicion p);

@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include "Elemento/Elemento.h"
 
-#define LISTA_MIN 0
 #define LISTA_MAX 1000
 #define LISTA_NULL -1
 
@@ -37,8 +36,5 @@ ListaPosicion ListaOrdinal(const Lista* l, size_t plogica);
 ListaPosicion ListaAgregar(Lista* l, const Elemento* e);
 ListaPosicion ListaInsertar(Lista* l, const Elemento* e, const ListaPosicion p);
 ListaPosicion ListaEliminar(Lista* l, const ListaPosicion p);
-
-
-
 
 

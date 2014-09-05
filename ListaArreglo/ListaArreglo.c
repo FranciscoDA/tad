@@ -11,7 +11,7 @@ void ListaCrear(Lista* l)
 
 bool ListaVacia(const Lista* l)
 {
-	return (*l).qItems == 0;
+	return ((*l).qItems == 0) && ((*l).inicio == LISTA_NULL) && ((*l).fin == LISTA_NULL);
 }
 
 bool ListaLlena(const Lista* l)
@@ -30,12 +30,13 @@ bool ListaRecuperar(const Lista* l, Elemento* dest, const ListaPosicion p)
 ListaPosicion ListaBuscar(
 	const Lista* l,
 	const Elemento* e,
-	bool (*cmp)(const Elemento* a, const Elemento* b)
+	bool (*cmp)(const Elemento*, const Elemento*, TIPO_COMPARAR),
+	TIPO_COMPARAR t
 )
 {
 	Elemento x;
 	ListaPosicion p = (*l).inicio;
-	while (ListaRecuperar(l, &x, p) && !cmp(e, &x))
+	while (ListaRecuperar(l, &x, p) && !cmp(e, &x, t))
 		p = ListaSiguiente(l, p);
 
 	return p;
@@ -114,8 +115,8 @@ ListaPosicion ListaEliminar(Lista* l, const ListaPosicion p)
 	}
 	(*l).fin = ListaAnterior(l, (*l).fin);
 	--(*l).qItems;
-	if (ListaVacia(l))
-		ListaCrear(l);
+	if ((*l).fin == LISTA_NULL)
+		(*l).inicio == LISTA_NULL;
 
 	return p;
 }
