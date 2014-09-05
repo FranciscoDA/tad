@@ -7,7 +7,7 @@ typedef enum {
 	TC_ENTERO,
 	TC_REAL,
 	TC_STRING
-} TIPO_COMPARAR
+} TIPO_COMPARAR;
 
 typedef struct {
 	DI : int;
