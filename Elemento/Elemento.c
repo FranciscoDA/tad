@@ -31,6 +31,8 @@ bool ElementoIgual(const Elemento* a, const Elemento* b, TIPO_COMPARAR t)
 		return false;
 	else if (t == TC_STRING)
 		return strcmp((*a).DS, (*b).DS) == 0;
+<<<<<<< HEAD
+=======
 }
 
 void armarString(const Elemento* a, *char[] s)
@@ -51,4 +53,5 @@ void armarString(const Elemento* a, *char[] s)
 	*s = strcat(*s,dr);
 	*s = strcat(*s," ");
 	*s = strcat(*s,dp);
+>>>>>>> 97dc3941806bdf56968ac263981bcee67b10e12e
 }
