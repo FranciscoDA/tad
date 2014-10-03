@@ -4,12 +4,19 @@
 void PilaCrear (Pila *p)
 {
 	(*p).qItems = 0;
+<<<<<<< HEAD
+=======
 	(*p).tope = -1;
+>>>>>>> 97dc3941806bdf56968ac263981bcee67b10e12e
 }
 
 bool PilaVacia (Pila *p)
 {
+<<<<<<< HEAD
+	return ((*p).qItems == 0);
+=======
 	return ((*p).qItems > 0);
+>>>>>>> 97dc3941806bdf56968ac263981bcee67b10e12e
 }
 
 bool PilaLlena (Pila *p)
@@ -34,7 +41,10 @@ bool PilaDesapilar (Pila *p)
 	if (!PilaVacia (p))
 	{
 		(*p).qItems--;
+<<<<<<< HEAD
+=======
 		(*p).tope--;
+>>>>>>> 97dc3941806bdf56968ac263981bcee67b10e12e
 		return true;
 	}
 	else
@@ -45,12 +55,25 @@ bool PilaRecuperarTope (Pila *p, Elemento *x)
 {
 	if (!PilaVacia (p))
 	{
+<<<<<<< HEAD
+		(*x) = (*p).elementos[(*p).qItems];
+		return true;
+=======
 	(*x) = (*p).elementos[(*p).tope];
+>>>>>>> 97dc3941806bdf56968ac263981bcee67b10e12e
 	}
 	else
 		return false;
 }
 
+<<<<<<< HEAD
+int PilaQItems (Pila *p)
+{
+	return (*p).qItems;
+}
+
+=======
+>>>>>>> 97dc3941806bdf56968ac263981bcee67b10e12e
 char* PilaRetornarAsString (Pila *p)
 {
 }
